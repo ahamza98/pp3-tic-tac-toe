@@ -1,10 +1,16 @@
-# from colors import Color 
+import colorama
+from colorama import Fore
 
-# user = 0
-# ai = 0
+# player_1 = 0
+# player_2 = 0
 # winner = none
 
-# def welcome():
+def welcome():
+    """
+     A Welcome message to the game
+    """
+    print(Fore.BLUE + "Welcome to Tic-Tac-Toe")
+   
 # Welcome to a Tic Tac Toe
 
 # def menu() 
@@ -29,4 +35,10 @@
 # def play_again()
 
 
-# def main()
+def main():
+    """
+    Run all functions
+    """
+    welcome()
+
+main()
