@@ -1,5 +1,5 @@
 import time
-import colorama
+import colorama 
 from colorama import Fore
 
 # player_1 = 0
@@ -23,11 +23,26 @@ def welcome():
     time.sleep(1)
 
 
+def menu():
+    """
+    A function that allows the user to start game
+    or look at the rules of the game
+    """
+    print(Fore.YELLOW + "1) Lets Play!")
+    print("2) How does it work?")
 
-   
-# Welcome to a Tic Tac Toe
+    option = int(input("Select an option: "))
 
-# def menu()
+    if option == 1:
+        print("playGame")
+    elif option == 2:
+        rules()
+    else:
+        print("\n")
+        print("Invalid choice. Enter 1 or 2")
+        print(" ")
+        menu()
+    
 # Option of Rules
 # Play Game
 # def rules ()
@@ -54,5 +69,6 @@ def main():
     Run all functions
     """
     welcome()
+    menu()
 
 main()
