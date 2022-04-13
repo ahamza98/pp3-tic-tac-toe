@@ -1,3 +1,4 @@
+import time
 import colorama
 from colorama import Fore
 
@@ -9,11 +10,24 @@ def welcome():
     """
      A Welcome message to the game
     """
-    print(Fore.BLUE + "Welcome to Tic-Tac-Toe")
+
+    print("\n")
+    print(Fore.BLUE + "Welcome to Tic-Tac-Toe!")
+    print("********************************")
+    print("\n")
+    time.sleep(1)
+    print(Fore.RED + "Enjoy a quick game of Tic-Tac_Toe with a friend " +
+                     "and see who wins the most!")
+    print("********************************")
+    print("\n")
+    time.sleep(1)
+
+
+
    
 # Welcome to a Tic Tac Toe
 
-# def menu() 
+# def menu()
 # Option of Rules
 # Play Game
 # def rules ()
