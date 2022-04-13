@@ -41,7 +41,7 @@ def menu():
                 print("\n")
                 break
             elif option == 2:
-                print("rules")
+                rules()
                 break
             else:
                 print("\n")
@@ -55,9 +55,41 @@ def menu():
             menu()
     exit
     
-# Option of Rules
+
 # Play Game
-# def rules ()
+def rules():
+    
+    """
+    The rules of Tic Tac Toe. 
+    function to return to main()
+    """
+    
+    print(Fore.YELLOW + "Tic-Tac-Toe Rules: ")
+    print("\n")
+    print("The Rules of the game is simple")
+    time.sleep(1)
+    print("A multiplayer game")
+    time.sleep(1)
+    print("The game is played on a grid that's 3 squares by 3 squares")
+    time.sleep(1)
+    print("You are X and your friend  is O.")
+    time.sleep(1)
+    print("The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.")
+    time.sleep(1)
+    print("When all 9 squares are full, the game is over.")
+    time.sleep(1)
+    print("The game is played on a grid that's 3 squares by 3 squares")
+    time.sleep(1)
+    print(" ")
+    time.sleep(1)
+    input("Enter any key to exit...\n")
+    
+    """
+    retuns to the main menu
+    """
+    
+    
+    main()
 
 # def play_game()
 # board
