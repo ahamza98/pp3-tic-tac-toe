@@ -23,6 +23,7 @@ def welcome():
     time.sleep(1)
 
 
+
 def menu():
     """
     A function that allows the user to start game
@@ -31,17 +32,28 @@ def menu():
     print(Fore.YELLOW + "1) Lets Play!")
     print("2) How does it work?")
 
-    option = int(input("Select an option: "))
+    while True:
+        try:
+            option = int(input("Select an option: "))
 
-    if option == 1:
-        print("playGame")
-    elif option == 2:
-        rules()
-    else:
-        print("\n")
-        print("Invalid choice. Enter 1 or 2")
-        print(" ")
-        menu()
+            if option == 1:
+                print("playGame")
+                print("\n")
+                break
+            elif option == 2:
+                print("rules")
+                break
+            else:
+                print("\n")
+                print("Invalid choice. Enter 1 or 2")
+                print(" ")
+                menu()
+        except ValueError:
+            print("\n")
+            print("Invalid choice. Enter 1 or 2")
+            print(" ")
+            menu()
+    exit
     
 # Option of Rules
 # Play Game
