@@ -55,7 +55,7 @@ def menu():
     exit
     
 
-# Play Game
+
 def rules():
     
     """
@@ -104,6 +104,7 @@ def display_board():
     print(board[3] + " | " + board[4] + " | " + board[5] + " | " )
     print("-----------------------------")
     print(board[6] + " | " + board[7] + " | " + board[8] + " | " )
+    print("\n")
     
 
 
@@ -113,6 +114,22 @@ def start_game():
     Functions to play the game
     and display board
     """
+    display_board()
+
+    choose_position()
+
+
+def choose_position():
+    """
+    Player chooses position from 1-9 via input
+    Each input is decreased by 1 as position 1 
+    is board[0].
+    """
+
+    position = input("choose a position from 1-9: ")
+    position = int(position) - 1
+    board[position] = "   x   "
+
     display_board()
 
 # def switch_player()
