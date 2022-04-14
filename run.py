@@ -78,8 +78,6 @@ def rules():
     time.sleep(1)
     print("When all 9 squares are full, the game is over.")
     time.sleep(1)
-    print("The game is played on a grid that's 3 squares by 3 squares")
-    time.sleep(1)
     print(" ")
     time.sleep(1)
     input("Enter any key to exit...\n")
