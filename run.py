@@ -37,8 +37,7 @@ def menu():
             option = int(input("Select an option: "))
 
             if option == 1:
-                print("playGame")
-                print("\n")
+                start_game()
                 break
             elif option == 2:
                 rules()
@@ -74,14 +73,14 @@ def rules():
     time.sleep(1)
     print("You are X and your friend  is O.")
     time.sleep(1)
-    print("The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner.")
+    print("The first player to get 3 of their marks in a row"
+          + "(up, down, across,or diagonally) is the winner.")
     time.sleep(1)
     print("When all 9 squares are full, the game is over.")
     time.sleep(1)
     print(" ")
     time.sleep(1)
     input("Enter any key to exit...\n")
-    
     """
     retuns to the main menu
     """
@@ -89,9 +88,32 @@ def rules():
     
     main()
 
-# def play_game()
-# board
-# def display_board()
+# A board where the game takes place
+# create board via list
+board = ["   -   ","   -   ","   -   ",
+         "   -   ","   -   ","   -   ",
+         "   -   ","   -   ","   -   ",]
+
+def display_board():
+    """
+    Print out the board on the terminal
+    """
+    print(Fore.GREEN + " ")
+    print(board[0] + " | " + board[1] + " | " + board[2] + " | " )
+    print("-----------------------------")
+    print(board[3] + " | " + board[4] + " | " + board[5] + " | " )
+    print("-----------------------------")
+    print(board[6] + " | " + board[7] + " | " + board[8] + " | " )
+    
+
+
+
+def start_game():
+    """
+    Functions to play the game
+    and display board
+    """
+    display_board()
 
 # def switch_player()
 
