@@ -32,27 +32,18 @@ def menu():
     print(Fore.YELLOW + "1) Lets Play!")
     print("2) How does it work?")
 
+    option = 0
     while True:
-        try:
-            option = int(input("Select an option: "))
+        option = int(input("Select an option: "))
+        if option == 1 or option == 2:
+            break
+        else:
+            print("Invalid input")
 
-            if option == 1:
-                start_game()
-                break
-            elif option == 2:
-                rules()
-                break
-            else:
-                print("\n")
-                print("Invalid choice. Enter 1 or 2")
-                print(" ")
-                menu()
-        except ValueError:
-            print("\n")
-            print("Invalid choice. Enter 1 or 2")
-            print(" ")
-            menu()
-    exit
+    if option == 1:
+        start_game()
+    elif option == 2:
+        rules()
     
 
 
@@ -132,27 +123,17 @@ def choose_position(player):
     
    
     while True:
-        try:
+            valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
             position = input("choose a position from 1-9: ")
-            position = int(position) - 1
+            position = int(position)
 
-            if position == 1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9:
-                board[position] = player
+            position = int(position)
+            if position in valid_inputs:
+                board[position-1] = player
                 display_board()
-                print("\n")
-                
-            elif position == 0:
-                print(" ")
-                print("Invalid Input")
-                position = input("choose a position from 1-9: ")
             else:
-                print(" ")    
-                print("Invalid Input")
-                position = input("choose a position from 1-9: ")
-        except:
-                print(" ")
-                print("Invalid Input")
-                position = input("choose a position from 1-9: ")
+                print("Invalid input")
+                
 
 # def switch_player()
 
