@@ -107,7 +107,9 @@ def display_board():
     print("\n")
     
 
+game_running = True
 
+current_player = "   x   "
 
 def start_game():
     """
@@ -116,21 +118,41 @@ def start_game():
     """
     display_board()
 
-    choose_position()
+    while game_running:
 
+        choose_position(current_player)
 
-def choose_position():
+        
+def choose_position(player):
     """
     Player chooses position from 1-9 via input
     Each input is decreased by 1 as position 1 
     is board[0].
     """
+    
+   
+    while True:
+        try:
+            position = input("choose a position from 1-9: ")
+            position = int(position) - 1
 
-    position = input("choose a position from 1-9: ")
-    position = int(position) - 1
-    board[position] = "   x   "
-
-    display_board()
+            if position == 1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9:
+                board[position] = player
+                display_board()
+                print("\n")
+                
+            elif position == 0:
+                print(" ")
+                print("Invalid Input")
+                position = input("choose a position from 1-9: ")
+            else:
+                print(" ")    
+                print("Invalid Input")
+                position = input("choose a position from 1-9: ")
+        except:
+                print(" ")
+                print("Invalid Input")
+                position = input("choose a position from 1-9: ")
 
 # def switch_player()
 
