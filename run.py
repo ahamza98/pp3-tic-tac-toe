@@ -4,7 +4,7 @@ from colorama import Fore
 
 # player_1 = 0
 # player_2 = 0
-# winner = none
+
 
 def welcome():
     """
@@ -71,7 +71,7 @@ def rules():
     time.sleep(1)
     print(" ")
     time.sleep(1)
-    input("Enter any key to exit...\n")
+    input("Press Enter to exit...\n")
     """
     retuns to the main menu
     """
@@ -100,7 +100,7 @@ def display_board():
 
 game_running = True
 
-current_player = "   x   "
+current_player = "   X   "
 
 def start_game():
     """
@@ -112,6 +112,8 @@ def start_game():
     while game_running:
 
         choose_position(current_player)
+
+        switch_player()
 
         
 def choose_position(player):
@@ -131,11 +133,30 @@ def choose_position(player):
             if position in valid_inputs:
                 board[position-1] = player
                 display_board()
+                break
             else:
+                (" ")
                 print("Invalid input")
+                (" ")
                 
 
-# def switch_player()
+def switch_player():
+    """
+    function that changes from
+    player X to player O
+    and O to X
+    """
+    # Set current player to global to access 
+    global current_player
+    if current_player == "   X   ":
+        current_player = "   O   "
+    elif current_player == "   O   ":
+        current_player = "   X   "
+    return
+    
+
+
+
 
 # def check_win()
 
