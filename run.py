@@ -2,8 +2,6 @@ import time
 import colorama 
 from colorama import Fore
 
-# player_1 = 0
-# player_2 = 0
 
 
 def welcome():
@@ -108,6 +106,9 @@ current_player = "   X   "
 
 winner = None
 
+player_X = 0
+player_O = 0
+
 def start_game():
     """
     Functions to play the game
@@ -129,10 +130,19 @@ def start_game():
     # Functions for when the game is ended
     if winner == "   X   ":
         print("Player X won")
+        print(" ")
+        time.sleep(1)
+        update_player_x_scores()
     elif winner == "   O   ":
         print("Player O won")
+        print(" ")
+        time.sleep(1)
+        update_player_o_scores()
     elif winner == None:
         print("You both tied")
+        print(" ")
+        time.sleep(1)
+        tie_scores()
 
     # Show scores
     # Play Again function
@@ -145,20 +155,24 @@ def choose_position(player):
     Each input is decreased by 1 as position 1 
     is board[0].
     """
-    
+
+    # Display which player's turn it is.
+    if player == "   X   ":
+        print("Player X turn")
+    elif player == "   O   ":
+        print("Player O turn")
+
+
     position = 0
     while True:
             valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
             position = input("choose a position from 1-9: ")
-            
-
             
             if position.isdigit():
                 position = int(position)
                 if position in valid_inputs:
                     break
                 
-            
             print (Fore.RED + " ")
             print("Invalid input")
             print(" ")
@@ -296,9 +310,33 @@ def switch_player():
          current_player = "   X   "
     return
     
-# check_tie()
+def update_player_x_scores():
+    global player_X
+    global player_O
+    player_X += 1
+    player_O
 
-# def updateScores
+    print(f"Player X = {player_X}")
+    print(f"Player O = {player_O}")
+
+
+def update_player_o_scores():
+    global player_X
+    global player_O
+    player_O += 1
+    player_X
+
+    print(f"Player X = {player_X}")
+    print(f"Player O = {player_O}")
+
+def tie_scores():
+    global player_X
+    global player_O
+
+    print(f"Player X = {player_X}")
+    print(f"Player O = {player_O}")
+
+   
 # def play_again()
 
 
