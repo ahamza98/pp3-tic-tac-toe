@@ -1,6 +1,14 @@
 import time
 import colorama 
 from colorama import Fore
+import os
+
+
+def cls():
+    """
+    Function is called to clear the terminal 
+    """
+    os.system()
 
 
 
@@ -114,6 +122,11 @@ def start_game():
     Functions to play the game
     and display board
     """
+
+    global board
+    board = ["   -   ","   -   ","   -   ",
+         "   -   ","   -   ","   -   ",
+         "   -   ","   -   ","   -   ",]
     display_board()
 
     while game_running:
@@ -144,8 +157,8 @@ def start_game():
         time.sleep(1)
         tie_scores()
 
-    # Show scores
     # Play Again function
+    play_again_menu()
 
        
 
@@ -311,6 +324,9 @@ def switch_player():
     return
     
 def update_player_x_scores():
+    """
+    Updates Player X scores
+    """
     global player_X
     global player_O
     player_X += 1
@@ -318,9 +334,13 @@ def update_player_x_scores():
 
     print(f"Player X = {player_X}")
     print(f"Player O = {player_O}")
+    print("\n")
 
 
 def update_player_o_scores():
+    """
+    Increases Player O scores
+    """
     global player_X
     global player_O
     player_O += 1
@@ -328,6 +348,7 @@ def update_player_o_scores():
 
     print(f"Player X = {player_X}")
     print(f"Player O = {player_O}")
+    print("\n")
 
 def tie_scores():
     global player_X
@@ -335,9 +356,42 @@ def tie_scores():
 
     print(f"Player X = {player_X}")
     print(f"Player O = {player_O}")
+    print("\n")
 
-   
-# def play_again()
+def quit():
+    """
+    Function that will quit the game and restart scores
+    """ 
+    print("Quit")  
+
+    
+def play_again_menu():
+    """
+    Menu to play again or quit after game ended
+    if option 1 is selected, scores will remain same.
+    """
+    
+    print(Fore.LIGHTCYAN_EX + "1) Play Again!")
+    print("2) Quit")
+
+    play_again_option = 0
+    while True:
+        play_again_option = input("Select an option: ")
+
+        if play_again_option.isdigit():
+            play_again_option = int(play_again_option)
+            if play_again_option == 1 or play_again_option == 2:
+                break
+        print(Fore.RED +" ")    
+        print("Invalid input")
+        print(" ")
+
+    if play_again_option == 1:
+        start_game()
+        
+    elif play_again_option == 2:
+        quit()
+
 
 
 def main():
