@@ -40,8 +40,9 @@ def menu():
             option = int(option)
             if option == 1 or option == 2:
                 break
-            
+        print(" ")    
         print("Invalid input")
+        print(" ")
 
     if option == 1:
         start_game()
@@ -141,7 +142,33 @@ def choose_position(player):
                 (" ")
                 print("Invalid input")
                 (" ")
-                
+
+def check_game_over():
+    """
+    Function will check if there has been a winner or tie,
+    and end the game
+    """
+    check_win()
+
+def check_win():
+    """
+    function that will check if a player has won.
+    """
+    # access winner variable
+    global winner
+
+    vertical_winner = check_vertical()
+    horizontal_winner = check_horizontal()
+    diagnol_winner = check_diagnol()
+
+    # Change the value of winner if there is a winner
+    if vertical_winner:
+        winner = vertical_winner
+    elif horizontal_winner:
+        winner = horizontal_winner
+    elif diagnol_winner:
+        winner = diagnol_winner
+
 
 def switch_player():
     """
