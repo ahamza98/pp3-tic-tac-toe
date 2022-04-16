@@ -16,7 +16,7 @@ def welcome():
     print("********************************")
     print("\n")
     time.sleep(1)
-    print(Fore.RED + "Enjoy a quick game of Tic-Tac_Toe with a friend " +
+    print(Fore.LIGHTMAGENTA_EX + "Enjoy a quick game of Tic-Tac_Toe with a friend " +
                      "and see who wins the most!")
     print("********************************")
     print("\n")
@@ -151,9 +151,10 @@ def choose_position(player):
                     break
                 
             
-            
-            print("Invalid input \n")
-            (" ")
+            print(Fore.RED +" ")
+            print("Invalid input")
+            print(" ")
+
     if position in valid_inputs:
         board[position-1] = player
         display_board()
