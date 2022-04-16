@@ -34,11 +34,14 @@ def menu():
 
     option = 0
     while True:
-        option = int(input("Select an option: "))
-        if option == 1 or option == 2:
-            break
-        else:
-            print("Invalid input")
+        option = input("Select an option: ")
+
+        if option.isdigit():
+            option = int(option)
+            if option == 1 or option == 2:
+                break
+            
+        print("Invalid input")
 
     if option == 1:
         start_game()
