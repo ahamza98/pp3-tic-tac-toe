@@ -40,7 +40,7 @@ def menu():
             option = int(option)
             if option == 1 or option == 2:
                 break
-        print(" ")    
+        print(Fore.RED +" ")    
         print("Invalid input")
         print(" ")
 
@@ -126,10 +126,19 @@ def start_game():
 
         switch_player()
 
-       
-        
+    # Functions for when the game is ended
+    if winner == "   X   ":
+        print("Player X won")
+    elif winner == "   O   ":
+        print("Player O won")
+    elif winner == None:
+        print("You both tied")
 
-        
+    # Show scores
+    # Play Again function
+
+       
+
 def choose_position(player):
     """
     Player chooses position from 1-9 via input
@@ -137,7 +146,6 @@ def choose_position(player):
     is board[0].
     """
     
-   
     position = 0
     while True:
             valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -151,7 +159,7 @@ def choose_position(player):
                     break
                 
             
-            print(Fore.RED +" ")
+            print (Fore.RED + " ")
             print("Invalid input")
             print(" ")
 
@@ -160,12 +168,14 @@ def choose_position(player):
         display_board()
 
     
+
 def check_game_over():
     """
     Function will check if there has been a winner or tie,
     and end the game
     """
     check_win()
+    check_tie()
         
 
 def check_win():
@@ -256,7 +266,22 @@ def check_diagnol():
     # Both diagnols have the common board position [4]
     if diag_1 or diag_2:
         return board[4]
-    
+
+
+def check_tie():
+    """
+    Function that checks tie when the whole board is filled.
+    """
+    global game_running
+    global winner
+
+    if "   -   " not in board and not check_win():
+        game_running = False
+        winner = None
+
+
+
+
 def switch_player():
     """
     function that changes from
