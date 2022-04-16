@@ -106,6 +106,8 @@ game_running = True
 
 current_player = "   X   "
 
+winner = None
+
 def start_game():
     """
     Functions to play the game
@@ -114,10 +116,18 @@ def start_game():
     display_board()
 
     while game_running:
+        """
+        Functions that will be run while game is being played
+        """
 
         choose_position(current_player)
 
+        check_game_over()
+
         switch_player()
+
+       
+        
 
         
 def choose_position(player):
@@ -142,13 +152,15 @@ def choose_position(player):
                 (" ")
                 print("Invalid input")
                 (" ")
-
+            
+    
 def check_game_over():
     """
     Function will check if there has been a winner or tie,
     and end the game
     """
     check_win()
+        
 
 def check_win():
     """
@@ -170,6 +182,75 @@ def check_win():
         winner = diagnol_winner
 
 
+
+def check_vertical():
+    """
+    function that check if a row has three same inputs.
+    """
+    # Set winner to global to access
+    global game_running
+
+    vert_1 = board[0] == board[3] == board[6] != "   -   "
+    vert_2 = board[1] == board[4] == board[7] != "   -   "
+    vert_3 = board[2] == board[5] == board[8] != "   -   "
+
+    # game_running will end when there is a vertical winner
+    if vert_3 or vert_2 or vert_1:
+        game_running = False
+
+    # return statements (X or O) for each vertical winner
+    if vert_1:
+        return board[6]
+    if vert_2:
+        return board[7]
+    if vert_3:
+        return board[8]
+
+def check_horizontal():
+    """
+    function that check if a column has three same inputs.
+    """
+    # Set winner to global to access
+    global game_running
+
+    hori_1 = board[0] == board[1] == board[2] != "   -   "
+    hori_2 = board[3] == board[4] == board[5] != "   -   "
+    hori_3 = board[6] == board[7] == board[8] != "   -   "
+
+    # game_running will end when there is a horizontal winner
+    if hori_3 or hori_2 or hori_1:
+        game_running = False
+
+    # return statements (X or O) for each horizontal winner
+    if hori_1:
+        return board[2]
+    if hori_2:
+        return board[5]
+    if hori_3:
+        return board[8]
+
+
+def check_diagnol():
+    """
+    function that check if a diagnol has three same inputs.
+    only need to diagnols
+    """
+    # Set winner to global to access
+    global game_running
+
+    diag_1 = board[0] == board[4] == board[8] != "   -   "
+    diag_2 = board[2] == board[4] == board[6] != "   -   "
+    
+
+    # game_running will end when there is a diagnol winner
+    if  diag_2 or diag_1:
+        game_running = False
+
+    # return statements (X or O) for each diagnol winner
+    # Both diagnols have the common board position [4]
+    if diag_1 or diag_2:
+        return board[4]
+    
 def switch_player():
     """
     function that changes from
@@ -181,21 +262,12 @@ def switch_player():
     if current_player == "   X   ":
         current_player = "   O   "
     elif current_player == "   O   ":
-        current_player = "   X   "
+         current_player = "   X   "
     return
     
-
-
-
-
-# def check_win()
-
-# def check_vertical()
-# def check_horizontal()
-# def check_diagnol()
+# check_tie()
 
 # def updateScores
-
 # def play_again()
 
 
