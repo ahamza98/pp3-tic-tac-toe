@@ -138,21 +138,26 @@ def choose_position(player):
     """
     
    
+    position = 0
     while True:
             valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
             position = input("choose a position from 1-9: ")
-            position = int(position)
-
-            position = int(position)
-            if position in valid_inputs:
-                board[position-1] = player
-                display_board()
-                break
-            else:
-                (" ")
-                print("Invalid input")
-                (" ")
             
+
+            
+            if position.isdigit():
+                position = int(position)
+                if position in valid_inputs:
+                    break
+                
+            
+            
+            print("Invalid input \n")
+            (" ")
+    if position in valid_inputs:
+        board[position-1] = player
+        display_board()
+
     
 def check_game_over():
     """
