@@ -141,4 +141,28 @@
 
 
 #
-##
+## Validation and Testing
+
+### [PEP8 Validation Service](http://pep8online.com/)
+
+- This site checks if the Python code pass no errors
+
+- No errors found in the code
+
+<details><summary>PEP8</summary>
+<img src="docs/testing/PEP-pp3.png">
+</details> <br/>
+
+#
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+| Was not able to print out the winner| Make winner variable global under check win |
+| When choosing to play again, game would end again straight away, meaning whoever won last round won again without playing. | Set game_running to false under play_again_option == 1 |
+| User was able to overwrite the previous players choice. e.g if player_o picked position 1, player_x would be able to pick position 1. | Make the valid inputs global first, then remove the previous position using .remove() |
+| Trailing white spaces all over the code | Go to VSCode settings and remove trailing auto whitespaces |
+
+
+
+
