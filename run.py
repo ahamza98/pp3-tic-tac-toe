@@ -1,5 +1,4 @@
 import time
-import colorama 
 from colorama import Fore
 import sys
 
@@ -187,6 +186,7 @@ def choose_position(player):
             print (Fore.RED + " ")
             print("Invalid input")
             print(" ")
+            display_board()
 
     if position in valid_inputs:
         board[position-1] = player
