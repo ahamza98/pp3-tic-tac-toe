@@ -1,14 +1,8 @@
 import time
 import colorama 
 from colorama import Fore
-import os
+import sys
 
-
-def cls():
-    """
-    Function is called to clear the terminal 
-    """
-    os.system()
 
 
 
@@ -367,7 +361,12 @@ def quit():
     """
     Function that will quit the game and restart scores
     """ 
-    print("Quit")  
+    print("\n")
+    time.sleep(3)
+    print("You have Quit the Game.")  
+    time.sleep(1)
+    print("Thank You for playing.")
+    sys.exit()
 
     
 def play_again_menu():
