@@ -164,5 +164,29 @@
 | Trailing white spaces all over the code | Go to VSCode settings and remove trailing auto whitespaces |
 
 
+#
+## Deploy
 
+### Deploy to Heroku
+Deploying your app to heroku
+1. Login to heroku and enter your details.
+command: heroku login -i
+2. Get your app name from heroku.
+command: heroku apps
+3. Set the heroku remote. (Replace <app_name> with your actual app name)
+command: heroku git:remote -a <pp3-tic-tac-toe>
+4. Add, commit and push to github
+command: git add . && git commit -m "Deploy to Heroku via CLI"
+5. Push to both github and heroku
+command: git push origin main
+command: git push heroku main 
+
+#
+
+## Credits
+
+- [Code Institute](https://codeinstitute.net/global/) for the gitpod template
+- Code Institute tutors for always helping me with my problems.
+- My mentor Mo Shami for helping me structure this project
+- [Code Coach](https://www.youtube.com/watch?v=dK6gJw4-NCo) from youtube on the tutorial for functions check_win() and check tie().
 
