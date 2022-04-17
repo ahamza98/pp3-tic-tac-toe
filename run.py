@@ -34,7 +34,7 @@ def menu():
 
     option = 0
     while True:
-        option = input("Select an option: ")
+        option = input("Select an option: \n")
 
         if option.isdigit():
             option = int(option)
@@ -177,7 +177,7 @@ def choose_position(player):
 
     position = 0
     while True:
-            position = input("choose a position from 1-9: ")
+            position = input("choose a position from 1-9: \n")
             
             if position.isdigit():
                 position = int(position)
@@ -380,7 +380,7 @@ def play_again_menu():
 
     play_again_option = 0
     while True:
-        play_again_option = input("Select an option: ")
+        play_again_option = input("Select an option: \n")
 
         if play_again_option.isdigit():
             play_again_option = int(play_again_option)
