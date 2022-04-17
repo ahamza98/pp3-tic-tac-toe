@@ -40,7 +40,34 @@
 - I want users to know what they have to input.
 - I want users to be notified if they made an invalid input
 
+#
+
+## Technical Design
+### Flowchart
+- A structure of the game
+
+<details><summary>Flowchart</summary>
+<img src="docs/pp3-project-flowchart.jpg">
+</details>
+
+## Technologies Used
+
+### Languages
+
+- Python
+
+### Frameworks & Tools
+
+- [Diagrams.net](https://app.diagrams.net/) was used to draw program flowchart
+- [GitHub](https://github.com/) was used as a remote repository to store project code
+- [Heroku Platform](https://dashboard.heroku.com/) was used to deploy the project into live environment
+- [PEP8](http://pep8online.com/) was used to check my code against Python conventions
+- [Visual Studio Code (VSCode)](https://code.visualstudio.com/) Was used as draft for gitpod.
 
 
+### Libraries
+- time - time.sleep() was used to delay print messages
+- colorama - Used to color the text in terminal
 
-
+#
+## Features
