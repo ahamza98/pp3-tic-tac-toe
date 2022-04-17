@@ -1,31 +1,46 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Tic Tac Toe Game
+- Tic Tac Toe is a python terminal game made for two players.
+- The rule of the game is very simple
+1. 1 player is "X" and the other is "O".
+2. The game is played on a 3 by 3 board.
+3. Whichever player fills a row, column or diagnol by 3 in a row wins
+#
 
-Welcome USER_NAME,
+## Project Goals
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+### User Goals
+- Play a basic game of tic tac toe with a friend
+- See the scores of who won.
+- Be able to play multiple times
+- Know the rules of the game
 
-## Reminders
+### Site Owner Goals
+- A simple game of tic tac toe that is easy to understand
+- Want the user to know how to play the game
+- Expect users to play game again
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+### Target Audience
+- Most preferably for 4+ as it requires some logical decisions
+#
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Stories
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### User Stories
+- I want to be able to know the rules of the game
+- I want to the site to be readable and simple
+- I want to be able to play without errors.
+- I want to know the scores of who won.
+- I want to be able to play again.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Site Owner Stories
+- I want users to enjoy the game
+- I want users to have an easy experience
+- I want users to know what they have to input.
+- I want users to be notified if they made an invalid input
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+
