@@ -95,6 +95,8 @@ board = ["   -   ","   -   ","   -   ",
          "   -   ","   -   ","   -   ",
          "   -   ","   -   ","   -   ",]
 
+valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 def display_board():
     """
     Print out the board on the terminal
@@ -122,13 +124,16 @@ def start_game():
     Functions to play the game
     and display board
     """
-
     global board
     board = ["   -   ","   -   ","   -   ",
          "   -   ","   -   ","   -   ",
          "   -   ","   -   ","   -   ",]
-    display_board()
 
+    # Inputs for the board positions
+    global valid_inputs
+    valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    display_board()
     while game_running:
         """
         Functions that will be run while game is being played
@@ -178,7 +183,6 @@ def choose_position(player):
 
     position = 0
     while True:
-            valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
             position = input("choose a position from 1-9: ")
             
             if position.isdigit():
@@ -192,6 +196,8 @@ def choose_position(player):
 
     if position in valid_inputs:
         board[position-1] = player
+        # Allow inputs to be only placed once
+        valid_inputs.remove(position)
         display_board()
 
     
@@ -203,7 +209,6 @@ def check_game_over():
     """
     check_win()
     check_tie()
-        
 
 def check_win():
     """
@@ -387,6 +392,9 @@ def play_again_menu():
         print(" ")
 
     if play_again_option == 1:
+        global game_running
+        # set to True to restart game with empty board.
+        game_running = True
         start_game()
         
     elif play_again_option == 2:
