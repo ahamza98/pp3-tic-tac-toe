@@ -68,6 +68,77 @@
 ### Libraries
 - time - time.sleep() was used to delay print messages
 - colorama - Used to color the text in terminal
+- sys - used to exit the system
 
 #
 ## Features
+<br/>
+
+### Main Menu
+- The Main menu when the program starts
+- Option of playing game or get to know rules
+
+<details><summary>Main menu</summary>
+<img src="docs/features/main-menu-pp3.png">
+</details> <br/>
+
+
+
+### Game Rules 
+- The rules of tic tac toe
+
+<details><summary>Rules</summary>
+<img src="docs/features/rules-pp3.png">
+</details> <br/>
+
+
+### Start of the game
+- How the game will look when "Lets play!" was selected.
+- The tic tac toe board.
+- input option
+
+<details><summary>Start Game</summary>
+<img src="docs/features/start-game-pp3.png">
+</details> <br/>
+
+### Input Position
+- How the board will look when the users input a number.
+- Board is filled with "X" and "O"
+
+<details><summary>Input position</summary>
+<img src="docs/features/x-o-inputs.png">
+</details> <br/>
+
+### Game Ended
+- Game screen when there is a winner or tie.
+<details><summary>Game Ended</summary>
+<img src="docs/features/win-pp3.png">
+</details> <br/>
+
+### Scores
+- When a player wins or tie, the score is updated
+
+
+<details><summary>Scores</summary>
+<img src="docs/features/score-pp3.png">
+</details> <br/>
+
+
+### Play Again menu
+- User has a choice to play game again or Quit entirely
+
+<details><summary>Play Again menu</summary>
+<img src="docs/features/play-again-pp3.png">
+</details> <br/>
+
+
+### Quit game
+- User Quits game. Program ends
+
+<details><summary>Quit</summary>
+<img src="docs/features/quit-game-pp3.png">
+</details> <br/>
+
+
+#
+##
