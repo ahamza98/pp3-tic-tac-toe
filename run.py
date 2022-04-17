@@ -3,8 +3,6 @@ from colorama import Fore
 import sys
 
 
-
-
 def welcome():
     """
      A Welcome message to the game
@@ -15,12 +13,12 @@ def welcome():
     print("********************************")
     print("\n")
     time.sleep(1)
-    print(Fore.LIGHTMAGENTA_EX + "Enjoy a quick game of Tic-Tac_Toe with a friend " +
-                     "and see who wins the most!")
+    print(Fore.LIGHTMAGENTA_EX + " ")
+    print("Enjoy a quick game of Tic-Tac_Toe with a friend " +
+          "and see who wins the most!")
     print("********************************")
     print("\n")
     time.sleep(1)
-
 
 
 def menu():
@@ -39,7 +37,7 @@ def menu():
             option = int(option)
             if option == 1 or option == 2:
                 break
-        print(Fore.RED +" ")    
+        print(Fore.RED + " ")
         print("Invalid input")
         print(" ")
 
@@ -47,16 +45,15 @@ def menu():
         start_game()
     elif option == 2:
         rules()
-    
 
 
 def rules():
-    
+
     """
-    The rules of Tic Tac Toe. 
+    The rules of Tic Tac Toe.
     function to return to main()
     """
-    
+
     print(Fore.YELLOW + "Tic-Tac-Toe Rules: ")
     print("\n")
     print("The Rules of the game is simple")
@@ -67,41 +64,40 @@ def rules():
     time.sleep(1)
     print("You are X and your friend  is O.")
     time.sleep(1)
-    print("The first player to get 3 of their marks in a row"
-          + "(up, down, across,or diagonally) is the winner.")
+    print("The first player to get 3 of their marks in a row" +
+          "(up, down, across,or diagonally) is the winner.")
     time.sleep(1)
     print("When all 9 squares are full, the game is over.")
     time.sleep(1)
     print(" ")
     time.sleep(1)
     input("Press Enter to exit...\n")
-    """
-    retuns to the main menu
-    """
-    
-    
     main()
 
 # A board where the game takes place
 # create board via list
-board = ["   -   ","   -   ","   -   ",
-         "   -   ","   -   ","   -   ",
-         "   -   ","   -   ","   -   ",]
 
-valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+board = ["   -   ", "   -   ", "   -   ",
+         "   -   ", "   -   ", "   -   ",
+         "   -   ", "   -   ", "   -   "]
+
+
+VALID_INPUTS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 
 def display_board():
     """
     Print out the board on the terminal
     """
     print(Fore.GREEN + " ")
-    print(board[0] + " | " + board[1] + " | " + board[2] + " | " )
+    print(board[0] + " | " + board[1] + " | " + board[2] + " | ")
     print("-----------------------------")
-    print(board[3] + " | " + board[4] + " | " + board[5] + " | " )
+    print(board[3] + " | " + board[4] + " | " + board[5] + " | ")
     print("-----------------------------")
-    print(board[6] + " | " + board[7] + " | " + board[8] + " | " )
+    print(board[6] + " | " + board[7] + " | " + board[8] + " | ")
     print("\n")
-    
+
 
 game_running = True
 
@@ -112,26 +108,22 @@ winner = None
 player_X = 0
 player_O = 0
 
+
 def start_game():
     """
     Functions to play the game
     and display board
     """
     global board
-    board = ["   -   ","   -   ","   -   ",
-         "   -   ","   -   ","   -   ",
-         "   -   ","   -   ","   -   ",]
+    board = ["   -   ", "   -   ", "   -   ", "   -   ", "   -   ", "   -   ",
+             "   -   ", "   -   ", "   -   ", ]
 
     # Inputs for the board positions
-    global valid_inputs
-    valid_inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    global VALID_INPUTS
+    VALID_INPUTS = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     display_board()
     while game_running:
-        """
-        Functions that will be run while game is being played
-        """
-
         choose_position(current_player)
 
         check_game_over()
@@ -149,7 +141,7 @@ def start_game():
         print(" ")
         time.sleep(1)
         update_player_o_scores()
-    elif winner == None:
+    else:
         print("You both tied")
         print(" ")
         time.sleep(1)
@@ -158,12 +150,11 @@ def start_game():
     # Play Again function
     play_again_menu()
 
-       
 
 def choose_position(player):
     """
     Player chooses position from 1-9 via input
-    Each input is decreased by 1 as position 1 
+    Each input is decreased by 1 as position 1
     is board[0].
     """
 
@@ -172,29 +163,26 @@ def choose_position(player):
         print("Player X turn")
     elif player == "   O   ":
         print("Player O turn")
-
-
     position = 0
     while True:
-            position = input("choose a position from 1-9: \n")
-            
-            if position.isdigit():
-                position = int(position)
-                if position in valid_inputs:
-                    break
-                
-            print (Fore.RED + " ")
-            print("Invalid input")
-            print(" ")
-            display_board()
+        position = input("choose a position from 1-9: \n")
 
-    if position in valid_inputs:
-        board[position-1] = player
-        # Allow inputs to be only placed once
-        valid_inputs.remove(position)
+        if position.isdigit():
+            position = int(position)
+            if position in VALID_INPUTS:
+                break
+
+        print(Fore.RED + " ")
+        print("Invalid input")
+        print(" ")
         display_board()
 
-    
+    if position in VALID_INPUTS:
+        board[position-1] = player
+        # Allow inputs to be only placed once
+        VALID_INPUTS.remove(position)
+        display_board()
+
 
 def check_game_over():
     """
@@ -203,6 +191,7 @@ def check_game_over():
     """
     check_win()
     check_tie()
+
 
 def check_win():
     """
@@ -222,7 +211,6 @@ def check_win():
         winner = horizontal_winner
     elif diagnol_winner:
         winner = diagnol_winner
-
 
 
 def check_vertical():
@@ -247,6 +235,7 @@ def check_vertical():
         return board[7]
     if vert_3:
         return board[8]
+
 
 def check_horizontal():
     """
@@ -282,12 +271,9 @@ def check_diagnol():
 
     diag_1 = board[0] == board[4] == board[8] != "   -   "
     diag_2 = board[2] == board[4] == board[6] != "   -   "
-    
-
     # game_running will end when there is a diagnol winner
-    if  diag_2 or diag_1:
+    if diag_2 or diag_1:
         game_running = False
-
     # return statements (X or O) for each diagnol winner
     # Both diagnols have the common board position [4]
     if diag_1 or diag_2:
@@ -306,22 +292,21 @@ def check_tie():
         winner = None
 
 
-
-
 def switch_player():
     """
     function that changes from
     player X to player O
     and O to X
     """
-    # Set current player to global to access 
+    # Set current player to global to access
     global current_player
     if current_player == "   X   ":
         current_player = "   O   "
     elif current_player == "   O   ":
-         current_player = "   X   "
+        current_player = "   X   "
     return
-    
+
+
 def update_player_x_scores():
     """
     Updates Player X scores
@@ -349,7 +334,11 @@ def update_player_o_scores():
     print(f"Player O = {player_O}")
     print("\n")
 
+
 def tie_scores():
+    """
+    Checks if there is a tie
+    """
     global player_X
     global player_O
 
@@ -357,24 +346,25 @@ def tie_scores():
     print(f"Player O = {player_O}")
     print("\n")
 
-def quit():
+
+def quit_game():
     """
     Function that will quit the game and restart scores
-    """ 
+    """
     print("\n")
     time.sleep(3)
-    print("You have Quit the Game.")  
+    print("You have Quit the Game.")
     time.sleep(1)
     print("Thank You for playing.")
     sys.exit()
 
-    
+
 def play_again_menu():
     """
     Menu to play again or quit after game ended
     if option 1 is selected, scores will remain same.
     """
-    
+
     print(Fore.LIGHTCYAN_EX + "1) Play Again!")
     print("2) Quit")
 
@@ -386,7 +376,7 @@ def play_again_menu():
             play_again_option = int(play_again_option)
             if play_again_option == 1 or play_again_option == 2:
                 break
-        print(Fore.RED +" ")    
+        print(Fore.RED + " ")
         print("Invalid input")
         print(" ")
 
@@ -395,10 +385,9 @@ def play_again_menu():
         # set to True to restart game with empty board.
         game_running = True
         start_game()
-        
-    elif play_again_option == 2:
-        quit()
 
+    elif play_again_option == 2:
+        quit_game()
 
 
 def main():
@@ -407,5 +396,6 @@ def main():
     """
     welcome()
     menu()
+
 
 main()
