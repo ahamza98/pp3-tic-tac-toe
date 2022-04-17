@@ -1,4 +1,10 @@
 # Tic Tac Toe Game
+**Creator: Mohammad Hamza**
+
+[Visit live website](https://pp3-tic-tac-toe.herokuapp.com/)
+
+![Mockup image](docs/mock-up.png)
+
 - Tic Tac Toe is a python terminal game made for two players.
 - The rule of the game is very simple
 1. 1 player is "X" and the other is "O".
